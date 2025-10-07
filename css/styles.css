@@ -39,7 +39,6 @@ body {
   padding: 50px;
   border-radius: .8rem;
   box-shadow: 3px 3px 3px #252525e7;
-
 }
 
 #creation-section form {
@@ -96,3 +95,71 @@ body {
   border-radius: unset;
 }
 
+
+#card-container .card {
+  width: 350px;
+  height: 350px;
+  background-color: #252525e7;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .card-header {
+  padding: .8rem;
+  display: flex;
+
+}
+
+/* card navigation */
+.card .card-header div {
+  width: 20px;
+  height: 20px;
+  background-color: #6c6cce;
+  border-radius: 50%;
+  margin: 0 .2rem;
+  cursor: pointer;
+}
+
+
+.card .card-header .red {
+  background-color: red;
+}
+
+.card .card-header .green {
+  background-color: green;
+}
+
+.card .card-header .yellow {
+  background-color: yellow;
+}
+
+
+.card .card-body {
+  width: 90%;
+  margin: 1rem auto;
+  border: 2px solid black;
+}
+
+.card .card-body ol {
+  list-style-type: none; /* Remove default numbering */
+  counter-reset: list-item-counter;
+}
+
+.card .card-body ol li {
+  display: flex;
+  
+}
+
+.card .card-body li::before {
+  counter-increment: list-item-counter; /* increment counter for each li */
+  content: counter(list-item-counter) ". "; /* Display the counter value */
+  margin-right: 5px; /* Ajust spacing as needed */
+}
+
+.card .card-body ol li div {
+  width: 50px;
+  margin-right: .3rem;
+  text-align: right;
+
+}
