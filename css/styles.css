@@ -1,0 +1,98 @@
+/* Rubik Font-family */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  font-family: Rubik, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('../images/pexels-hngstrm-2885868.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#app-title {
+  color: #f6f4f4;
+  text-shadow: 3px 3px 3px #252525;
+  margin-bottom: 1rem;
+}
+
+#creation-section {
+  background-color: #0d0d0d93;
+  padding: 50px;
+  border-radius: .8rem;
+  box-shadow: 3px 3px 3px #252525e7;
+
+}
+
+#creation-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
+}
+
+#creation-section form .form-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-row label {
+  width: 60px;
+  text-align: right;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.form-row input {
+  height: 30px;
+  width: 180px;
+  padding: 7px;
+  border-radius: .5rem;
+  border: none;
+  background-color: #ccc;
+  font-size: 1rem;
+  color: #252525;
+  outline: none;
+  box-shadow: 3px 3px 3px #252525;
+}
+
+.form-row button[type='submit'] {
+  display: block;
+  margin: .5rem auto;
+  width: 120px;
+  height: 35px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #252525;
+  background-color: #6c6cce;
+  border-radius: .5rem;
+  border: none;
+  box-shadow: 3px 3px 3px #252525;
+  cursor: pointer;
+}
+
+.form-row button[type='submit']:active {
+  box-shadow: unset;
+  border-radius: unset;
+}
+
