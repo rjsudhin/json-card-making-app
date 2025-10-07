@@ -58,7 +58,7 @@ function createJsonUI(arr) {
     <ol>
       <li>{</li>
       <li><div>name : </div>${arr[0]}</li>
-      <li><div>title : </div>${arr[1]}</li>
+      <li><div>title : </div>"${arr[1]}</li>
       <li><div>email : </div>${arr[2]}</li>
       <li><div>link : </div>${arr[3]}</li>
       <li>}</li>

@@ -137,8 +137,7 @@ body {
 
 .card .card-body {
   width: 90%;
-  margin: 1rem auto;
-  border: 2px solid black;
+  margin: .5rem auto;
 }
 
 .card .card-body ol {
@@ -148,7 +147,10 @@ body {
 
 .card .card-body ol li {
   display: flex;
-  
+  color: rgb(170, 96, 213);
+  div {
+    color: rgba(160, 235, 143, 0.789);
+  }
 }
 
 .card .card-body li::before {
