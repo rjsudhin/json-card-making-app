@@ -51,7 +51,11 @@ function createJsonUI(arr) {
   cardHeader.innerHTML = `
     <div onclick='removeCard(event)' class='red'></div>
     <div onclick='backspacing(event)' class='green'></div>
-    <div onclick='undo(event)' class='yellow'></div>`
+    <div onclick='undo(event)' class='yellow'></div>
+    
+    <div class="theme-toggle-container">
+      <span onclick='themeSwitching(event)' class='material-symbols-outlined'>toggle_on</span>
+    </div>`
 
   card.append(cardHeader)
 
@@ -126,6 +130,20 @@ function undo(event) {
       listContainer.appendChild(li)
     }
   }
+  
+}
+
+// theme switching dark and light
+function themeSwitching(event) {
+  console.log('theme switching button clicked')
+  let current = event.target
+  
+  if (current.textContent == 'toggle_on') {
+    current.textContent = 'toggle_off'
+  } else {
+    current.textContent = 'toggle_on'
+  }
+  
   
 }
 

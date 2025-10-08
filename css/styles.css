@@ -115,7 +115,6 @@ body {
 .card .card-header div {
   width: 20px;
   height: 20px;
-  background-color: #6c6cce;
   border-radius: 50%;
   margin: 0 .2rem;
   cursor: pointer;
@@ -132,6 +131,17 @@ body {
 
 .card .card-header .yellow {
   background-color: yellow;
+}
+
+.card .card-header .theme-toggle-container {
+  margin-left: auto;
+  span {
+    color: #fff;
+    padding: .2rem;
+    margin-right: .8rem;
+    border-radius: 50%;
+    background-color: #252525;
+  }
 }
 
 
