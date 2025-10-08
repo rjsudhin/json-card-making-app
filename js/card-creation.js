@@ -47,10 +47,11 @@ function createJsonUI(arr) {
   card.classList.add('card')
   const cardHeader = document.createElement('div')
   cardHeader.classList.add('card-header')
-  cardHeader.innerHTML = `<div class='red'></div>
+  cardHeader.innerHTML = `
+    <div onclick='removeCard(event)' class='red'></div>
     <div class='green'></div>
     <div class='yellow'></div>`
-  
+
   card.append(cardHeader)
 
   const cardBody = document.createElement('div')
@@ -77,4 +78,16 @@ function removeCreationSection() {
 }
 
 
+// navigation menu event handling 
+function removeCard(event) {
+  let parent = event.target.parentElement.parentElement
+  console.log(parent)
+  // removing the full card Contents
+  cardContainer.removeChild(parent)
+  updateDisplay()
+}
 
+// updating the screen when remove the cards from UI
+function updateDisplay() {
+  document.body.insertBefore(creationSection, cardContainer)
+}
