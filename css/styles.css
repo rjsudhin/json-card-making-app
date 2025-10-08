@@ -148,6 +148,7 @@ body {
 .card .card-body ol li {
   display: flex;
   color: rgb(170, 96, 213);
+  margin: .5rem 0 ;
   div {
     color: rgba(160, 235, 143, 0.789);
   }
@@ -156,12 +157,12 @@ body {
 .card .card-body li::before {
   counter-increment: list-item-counter; /* increment counter for each li */
   content: counter(list-item-counter) ". "; /* Display the counter value */
-  margin-right: 5px; /* Ajust spacing as needed */
+  margin-right: 1rem; /* Ajust spacing as needed */
 }
 
 .card .card-body ol li div {
   width: 50px;
-  margin-right: .3rem;
+  margin-right: .5rem;
   text-align: right;
 
 }
