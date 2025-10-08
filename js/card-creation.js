@@ -51,7 +51,7 @@ function createJsonUI(arr) {
   cardHeader.innerHTML = `
     <div onclick='removeCard(event)' class='red'></div>
     <div onclick='backspacing(event)' class='green'></div>
-    <div class='yellow'></div>`
+    <div onclick='undo(event)' class='yellow'></div>`
 
   card.append(cardHeader)
 
@@ -102,6 +102,31 @@ function backspacing(event) {
     console.log(copyList)
   }
 
+}
+
+// restoring remove contents in cards
+function undo(event) {
+  const currentElement = event.target 
+  const parentContainer = currentElement.parentElement // card header
+  const cardBody = parentContainer.nextElementSibling  // getting the card body element
+  const listContainer = cardBody.firstElementChild
+  
+  // check the copy list is empty or not
+  if (copyList.length > 0) {
+    let current = copyList.pop()
+    if (current.textContent.length > 1) {
+      let splited = current.textContent.split(':')
+      console.log(splited)
+      let li = document.createElement('li')
+      li.innerHTML = `<div>${splited[0]}: </div>${splited[1]}`
+      listContainer.appendChild(li)
+    } else {
+      li = document.createElement('li')
+      li.textContent = current.textContent
+      listContainer.appendChild(li)
+    }
+  }
+  
 }
 
 // updating the screen when remove the cards from UI
