@@ -4,6 +4,7 @@ const cardContainer = document.querySelector('#card-container')
 const createBtn = document.querySelector('.create-btn')
 const allInputs = document.querySelectorAll('input')
 
+let copyList = []
 
 // stop submit button default behaviour
 createBtn.addEventListener('click', (e) => {
@@ -49,7 +50,7 @@ function createJsonUI(arr) {
   cardHeader.classList.add('card-header')
   cardHeader.innerHTML = `
     <div onclick='removeCard(event)' class='red'></div>
-    <div class='green'></div>
+    <div onclick='backspacing(event)' class='green'></div>
     <div class='yellow'></div>`
 
   card.append(cardHeader)
@@ -85,6 +86,22 @@ function removeCard(event) {
   // removing the full card Contents
   cardContainer.removeChild(parent)
   updateDisplay()
+}
+
+function backspacing(event) {
+  const currentElement = event.target 
+  const parentContainer = currentElement.parentElement // card header
+  const cardBody = parentContainer.nextElementSibling  // getting the card body element
+  const listContainer = cardBody.firstElementChild     // getting the ol element of card body
+  const allListElements = listContainer.children
+
+  if (allListElements.length > 0) {
+    const lastNode = allListElements[allListElements.length - 1]
+    let currentOne = listContainer.removeChild(lastNode)
+    copyList.push(currentOne)
+    console.log(copyList)
+  }
+
 }
 
 // updating the screen when remove the cards from UI
